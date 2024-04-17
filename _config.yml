@@ -1,7 +1,1 @@
-plugins:
-- jekyll-remote-theme
-#theme: jekyll-theme-minimal
-
-remote_theme: pages-themes/cayman@v0.2.0
-
 title: La Crosse Transportation Flow Map
