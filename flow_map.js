@@ -51,10 +51,6 @@ var grayscale = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
     zoomOffset: -1
 });
 
-var topo = L.tileLayer.wms('http://ows.mundialis.de/services/service?', {
-    layers: 'SRTM30-Colored-Hillshade'
-});
-
 //Create the map variable
 var mymap = L.map("map", {
     center: [6.794952075439587, 20.91148703911037], 
@@ -66,7 +62,6 @@ var mymap = L.map("map", {
 var baseLayers = {
     'Grayscale': grayscale,
     'Streets': streets,
-    "Hillshade": topo,
     };
 
 var overlays = {'Landmarks': landmarks};
