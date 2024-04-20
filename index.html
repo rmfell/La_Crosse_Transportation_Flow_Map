@@ -72,35 +72,46 @@
                 font-size: .9em;
                 line-height: 1.5em;
             }
+            #button-container {
+                position: absolute;
+                bottom: 460px;
+                right: 5px;
+                width: 234px;
+                padding: 0px 15px;
+                background: rgba(255, 255, 255, 1);
+            }
             #toggle-button {
                 position: absolute;
                 top: 50%;
-                left: -40px;
+                left: -34px;
                 width: 0;
                 height: 0;
-                padding: 15px;
-                border-left: 20px solid transparent;
-                border-right: 10px solid transparent;
-                border-bottom: 10px solid transparent;
-                border-top: 10px solid #ccc;
-                background-color: rgba(255, 255, 255, 0.85);
+                border-left: 15px solid transparent;
+                border-right: 15px solid transparent;
+                border-top: 20px solid grey;
                 cursor: pointer;
-                transform: rotate(270deg); /* Rotate the arrow 90 degrees */
+                transform: rotate(270deg);
+            }
+            #toggle-button.rotated {
+                transform: rotate(180deg); /* Rotate the button 180 degrees */
+                transform-origin: center;
             }
         </style>
     </head>
     
    <body bgcolor="#EDDD9E">
-      <h1 id="title">La Crosse Transportation Flow Map</h1>
-       <div id="map"></div>
-        <div id="description">
-            <div id="description_content">
-                <h2>About</h2>
-                <p>This map is the final product of an undergradute research project. The research project was a collaboration between the University of Wisconsin-La Crosse's Computer Science and Computer Engineering Department and the Geography and Environmental Science Department. This project used survey data collected from local employers, the survey recorded data about people's commute to and from work. We analyzed this data to create flow maps showing the most utilized routes in La Crosse.</p>
-                <p>Webmap created by: Ryan Fell and Jacob Kampf</p>
+    <h1 id="title">La Crosse Transportation Flow Map</h1>
+        <div id="map"></div>
+            <div id="description">
+                <div id="description_content">
+                    <h2>About</h2>
+                    <p>This map is the final product of an undergradute research project. The research project was a collaboration between the University of Wisconsin-La Crosse's Computer Science and Computer Engineering Department and the Geography and Environmental Science Department. This project used survey data collected from local employers, the survey recorded data about people's commute to and from work. We analyzed this data to create flow maps showing the most utilized routes in La Crosse.</p>
+                    <p>Webmap created by: Ryan Fell and Jacob Kampf</p>
+                </div>
+                    <div id="button-container">
+                        <div id="toggle-button" onclick="toggleDescription()"></div>
+                    </div>
             </div>
-            <div id="toggle-button" onclick="toggleDescription()"></div>
-      </div>
        <script src="final_script.js"></script>
       </body>
 </html>
