@@ -17,40 +17,57 @@ var mymap = L.map("map", {
 
 });
 
+//GeoJSON variables
+var traneJson,
+    onaJson,
+    cityJson,
+    dairyJson,
+    holmJson,
+    uwlJson,
+    countyJson,
+    wtcJson;
+
 
 //Adding all GeoJSON data
 traneJson = L.geoJSON(traneData, {
     style: trane_style,
+    onEachFeature: onEachTrane
 });
 
 onaJson = L.geoJSON(onaData, {
     style: ona_style,
+    onEachFeature: onEachOna
 });
 
 cityJson = L.geoJSON(cityData, {
     style: city_style,
+    onEachFeature: onEachCity
 });
 
 dairyJson = L.geoJSON(dairyData, {
     style: dairy_style,
+    onEachFeature: onEachDairy
 });
 
 holmJson = L.geoJSON(holmenData, {
     style: holmen_style,
+    onEachFeature: onEachHolmen
 });
 
 uwlJson = L.geoJSON(uwlData, {
     style: uwl_style,
+    onEachFeature: onEachUWL
 });
 
 countyJson = L.geoJSON(countyData, {
     style: county_style,
+    onEachFeature: onEachCounty
 });
 
 wtcJson = L.geoJSON(wtcData, {
     style: wtc_style,
+    onEachFeature: onEachWTC
 });
-
 
 
 //Creating markers for each employer

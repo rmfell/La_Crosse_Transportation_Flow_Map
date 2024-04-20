@@ -53,3 +53,5 @@ function county_style(feature) {
         color: '#6cc9e2'
     };
 }
+
+//Resetting highlighting for each popup
