@@ -1,11 +1,4 @@
-//var splashScreen = document.querySelector('.splash');
 
-//splashScreen.addEventListener('click',()=>{
-//  splashScreen.style.opacity = 0;
-//  setTimeout(()=>{
-//    splashScreen.classList.add('hidden')
-//  },610)
-//});
 //Set up the baselayers and WMS layer
 var streets = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2NoYXVkaHVyaSIsImEiOiJjazBtcG5odG8wMDltM2JtcjdnYTgyanBnIn0.qwqjMomdrBMG36GQKXBlMw', {
     maxZoom: 18,
@@ -58,44 +51,46 @@ wtcJson = L.geoJSON(wtcData, {
     style: wtc_style,
 });
 
+
+
 //Creating markers for each employer
-var cityMarker = L.marker([43.8166637123762, -91.24809062065495]).bindPopup('City of La Crosse - City Hall'),
+var cityMarker = L.marker([43.8166637123762, -91.24809062065495]).bindPopup(cityPopup),
     
-    dairyMarker =L.marker([43.77785796539056, -91.22917015480107]).bindPopup('Dairyland Power Cooperative'),
+    dairyMarker =L.marker([43.77785796539056, -91.22917015480107]).bindPopup(dairyPopup),
     
-    uwlMarker = L.marker([43.81720841033026, -91.2291335709666]).bindPopup('University of Wisconsin - La Crosse'),
+    uwlMarker = L.marker([43.81720841033026, -91.2291335709666]).bindPopup(uwlPopup),
     
-    adminMarker = L.marker([43.813060180816045, -91.2477582910667]).bindPopup('La Crosse County Administrative Center'),
+    adminMarker = L.marker([43.813060180816045, -91.2477582910667]).bindPopup(adminPopup),
     
-    traneMarker = L.marker([43.78697515522275, -91.22641347115187]).bindPopup('Trane'),
+    traneMarker = L.marker([43.78697515522275, -91.22641347115187]).bindPopup(tranePopup),
     
-    wtcMarker = L.marker([43.81550758244395, -91.24600923950368]).bindPopup('Western Technical College'),
+    wtcMarker = L.marker([43.81550758244395, -91.24600923950368]).bindPopup(wtcPopup),
     
-    evergreenMarker = L.marker([43.970051876572256, -91.25555906386555]).bindPopup('Evergreen Elementary School'),
+    evergreenMarker = L.marker([43.970051876572256, -91.25555906386555]).bindPopup(evergreenPopup),
     
-    holmHighMarker = L.marker([43.97290772197836, -91.27790495892063]).bindPopup('Holmen High School'),
+    holmHighMarker = L.marker([43.97290772197836, -91.27790495892063]).bindPopup(holmHighPopup),
     
-    holmMidMarker = L.marker([43.96807746239547, -91.26164605892369]).bindPopup('Holmen Middle School'),
+    holmMidMarker = L.marker([43.96807746239547, -91.26164605892369]).bindPopup(holmMidPopup),
     
-    prairieMarker = L.marker([43.990326719461244, -91.28410295778785]).bindPopup('Prairie View Elemntary School'),
+    prairieMarker = L.marker([43.990326719461244, -91.28410295778785]).bindPopup(prairiePopup),
     
-    sandMarker = L.marker([43.928694029134455, -91.24032519758342]).bindPopup('Sand Lake Elementary School'),
+    sandMarker = L.marker([43.928694029134455, -91.24032519758342]).bindPopup(sandPopup),
     
-    vikingMarker = L.marker([43.96183273383593, -91.24953575892764]).bindPopup('Viking Elementary School'),
+    vikingMarker = L.marker([43.96183273383593, -91.24953575892764]).bindPopup(vikingPopup),
     
-    eagleMarker = L.marker([43.88340629869768, -91.19974284363583]).bindPopup('Eagle Bluff Elementary School'),
+    eagleMarker = L.marker([43.88340629869768, -91.19974284363583]).bindPopup(eaglePopup),
     
-    irvingMarker = L.marker([43.88362058523988, -91.22924505831276]).bindPopup('Irving Pertzsch Elementary School'),
+    irvingMarker = L.marker([43.88362058523988, -91.22924505831276]).bindPopup(irvingPopup),
     
-    northernMarker = L.marker([43.896301783032456, -91.23461612033412]).bindPopup('Northern Hills Elementary School'),
+    northernMarker = L.marker([43.896301783032456, -91.23461612033412]).bindPopup(northernPopup),
     
-    onaHighMarker = L.marker([43.876616514162976, -91.22732626029804]).bindPopup('Onalaska High School'),
+    onaHighMarker = L.marker([43.876616514162976, -91.22732626029804]).bindPopup(onaHighPopup),
     
-    onaMidMarker = L.marker([43.8927583035925, -91.2285268314611]).bindPopup('Onalaska Middle School'),
+    onaMidMarker = L.marker([43.8927583035925, -91.2285268314611]).bindPopup(onaMidPopup),
     
-    humanMarker = L.marker([43.81472924400062, -91.24864868566092]).bindPopup('La Crosse County Human Services'),
+    humanMarker = L.marker([43.81472924400062, -91.24864868566092]).bindPopup(humanPopup),
     
-    lawMarker = L.marker([43.81449789051716, -91.25030412443274]).bindPopup('La Crosse County Law Enforcement Center');
+    lawMarker = L.marker([43.81449789051716, -91.25030412443274]).bindPopup(lawPopup);
 
 // Create layer groups for each employer
 var cityGroup = L.layerGroup([cityJson, cityMarker]),
@@ -119,6 +114,7 @@ var baseLayers = {
     'Streets': streets
 };
 
+//Radio buttons of each employer.  Only one can be selected at once!
 var overlays = {
     "City of La Crosse - City Hall": cityGroup,
     "Dairyland Power Cooperative": dairyGroup,
