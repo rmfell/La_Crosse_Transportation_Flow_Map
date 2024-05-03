@@ -1,3 +1,14 @@
+var buttonBox = document.getElementById("button-container");
+var popup = document.getElementById('popup');
+
+buttonBox.addEventListener('mouseover', function() {
+  popup.classList.add('show');
+});
+
+buttonBox.addEventListener('mouseout', function() {
+  popup.classList.remove('show');
+});
+
 function toggleDescription() {
     var descriptionBox = document.getElementById("description");
     var buttonBox = document.getElementById("button-container");

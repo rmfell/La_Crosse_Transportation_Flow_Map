@@ -5,10 +5,16 @@
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">       
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <link rel="stylesheet" href="L.Control.Sidebar.css">
+        <link rel="stylesheet" href="L.Control.Sidebar.scss">
+        <link rel="stylesheet" href="easy-button.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.css" />
         <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
         <script src="styles.js"></script>
         <script src="popups.js"></script>
-        <script src="desc_toggle.js"></script>
+        <script src="L.Control.Sidebar.js"></script>
+        <script src="easy-button.js"></script>
         <script src="highlight.js"></script>
         <script src="trane.js"></script>
         <script src="onalaska.js"></script>
@@ -18,6 +24,7 @@
         <script src="county_lax.js"></script>
         <script src="uwl.js"></script>
         <script src="wtc.js"></script>
+        <script src="https://unpkg.com/leaflet-easybutton@2.4.0/src/easy-button.js"></script>
         
         <style>
             body {
@@ -93,26 +100,37 @@
                 cursor: pointer;
                 transform: rotate(270deg);
             }
-            #toggle-button.rotated {
-                transform: rotate(180deg); /* Rotate the button 180 degrees */
-                transform-origin: center;
-            }
+            .popup {
+                visibility: hidden;
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                height: 50px;
+                width: 200px;
+                transform: translate(-50%, 0);
+                background-color: rgb(228, 228, 175);
+                color: green;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                z-index: 801;
+                }
+
+            .popup.show {
+                visibility: visible;
+            }        
         </style>
     </head>
     
    <body bgcolor="#EDDD9E">
     <h1 id="title">La Crosse Transportation Flow Map</h1>
-        <div id="map"></div>
-            <div id="description">
-                <div id="description_content">
-                    <h2>About</h2>
-                    <p>This map is the final product of an undergradute research project. The research project was a collaboration between the University of Wisconsin-La Crosse's Computer Science and Computer Engineering Department and the Geography and Environmental Science Department. This project used survey data collected from local employers, the survey recorded data about people's commute to and from work. We analyzed this data to create flow maps showing the most utilized routes in La Crosse.</p>
-                    <p>Webmap created by: Ryan Fell and Jacob Kampf</p>
-                </div>
-                    <div id="button-container">
-                        <div id="toggle-button" onclick="toggleDescription()"></div>
-                    </div>
-            </div>
+       <div id="map">
+           <div id="sidebar">
+               <h1>About</h1>
+                <p>This map is the final product of an undergradute research project. The research project was a collaboration between the University of Wisconsin-La Crosse's Computer Science and Computer Engineering Department and the Geography and Environmental Science Department. This project used survey data collected from local employers, the survey recorded data about people's commute to and from work. We analyzed this data to create flow maps showing the most utilized routes in La Crosse.</p>
+                <p>Webmap created by: Ryan Fell and Jacob Kampf</p>
+           </div>
+        </div>
        <script src="final_script.js"></script>
       </body>
 </html>

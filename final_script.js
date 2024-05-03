@@ -172,3 +172,23 @@ mymap.on('baselayerchange', function (event) {
 
 var layerControl = L.control.layers(overlays).addTo(mymap);
 
+// Sidebar
+var sidebar = L.control.sidebar('sidebar', {
+closeButton: true,
+position: 'left'
+});
+mymap.addControl(sidebar);
+
+setTimeout(function () {
+    sidebar.show();
+}, 1700);
+
+// Sidebar Menu Button
+L.easyButton(('<img src="https://toppng.com/uploads/preview/menu-icon-png-3-lines-11552744384er3xmq5ix5.png" style="width:22px">'), function () {
+    sidebar.toggle();
+}).addTo(mymap);
+
+mymap.on('click', function () {
+sidebar.hide();
+})
+
