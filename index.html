@@ -80,26 +80,7 @@
                 font-size: .9em;
                 line-height: 1.5em;
             }
-            #button-container {
-                position: absolute;
-                bottom: 460px;
-                right: 5px;
-                width: 234px;
-                padding: 0px 15px;
-                background: rgba(255, 255, 255, 1);
-            }
-            #toggle-button {
-                position: absolute;
-                top: 50%;
-                left: -34px;
-                width: 0;
-                height: 0;
-                border-left: 15px solid transparent;
-                border-right: 15px solid transparent;
-                border-top: 20px solid grey;
-                cursor: pointer;
-                transform: rotate(270deg);
-            }
+            
             .popup {
                 visibility: hidden;
                 position: absolute;
@@ -118,7 +99,28 @@
 
             .popup.show {
                 visibility: visible;
-            }        
+            }
+            
+            .button-html {
+                background-color: slategray;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                font-size: 14px;
+                margin: 4px 0; 
+                cursor: pointer;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                outline: none;
+            }
+
+            .button-html:hover {
+                background-color: #5f737e; 
+            }
         </style>
     </head>
     
@@ -126,9 +128,19 @@
     <h1 id="title">La Crosse Transportation Flow Map</h1>
        <div id="map">
            <div id="sidebar">
-               <h1>About</h1>
+               <h2>About this map</h2>
                 <p>This map is the final product of an undergradute research project. The research project was a collaboration between the University of Wisconsin-La Crosse's Computer Science and Computer Engineering Department and the Geography and Environmental Science Department. This project used survey data collected from local employers, the survey recorded data about people's commute to and from work. We analyzed this data to create flow maps showing the most utilized routes in La Crosse.</p>
                 <p>Webmap created by: Ryan Fell and Jacob Kampf</p>
+               <h2 style="text-align: center">Links to Employer Graphs</h2>
+               <!-- Sidebar buttons-->
+               <a href="graph_html/trane.html" target="_blank"><button class="button-html">Trane</button></a>
+               <a href="graph_html/wtc.html" target="_blank"><button class="button-html">Western Technical College</button></a>
+               <a href="graph_html/ona.html" target="_blank"><button class="button-html">Onalaska School District</button></a>
+               <a href="graph_html/uwl.html" target="_blank"><button class="button-html">University of Wisconsin - La Crosse</button></a>
+               <a href="graph_html/holmen.html" target="_blank"><button class="button-html">Holmen School District</button></a>
+               <a href="graph_html/dairy.html" target="_blank"><button class="button-html">Dairyland Power Cooperative</button></a>
+               <a href="graph_html/city.html" target="_blank"><button class="button-html">City of La Crosse City Hall</button></a>
+               <a href="graph_html/county.html" target="_blank"><button class="button-html">La Crosse County Offices</button></a>
            </div>
         </div>
        <script src="final_script.js"></script>
